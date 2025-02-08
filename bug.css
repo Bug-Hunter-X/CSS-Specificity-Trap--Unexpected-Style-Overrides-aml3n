@@ -1,0 +1,20 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+.container {
+  background-color: lightblue;
+}
+
+#my-element {
+  background-color: lightcoral;
+}
+
+.container #my-element {
+  background-color: lightgreen; /* This style is never applied due to specificity */
+}
+
+```
+
+The intended behavior is to make the element with the id "my-element" which is inside the element with the class "container" have a lightgreen background.  However, due to the way CSS specificity works, the more specific selector `#my-element` overrides the less specific selector `.container #my-element`.
+
+This example highlights that specificity sometimes behaves in counter-intuitive ways that are easy to overlook. 
